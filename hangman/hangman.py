@@ -1,7 +1,7 @@
 import os
 import string
 from extra import hangmanArt
-
+import random
 os.system('cls')
 
 def printLayout(hangmanArtCounter, progress, entries):
@@ -9,8 +9,9 @@ def printLayout(hangmanArtCounter, progress, entries):
     print(hangmanArt[hangmanArtCounter])
     entries = str(entries).strip('[]').replace('\'', '')
     print(f'You have tried - {entries}')
-
-word = "so"
+    
+wordBank = ['elephant', 'tiger', 'flamingo', 'panda', 'porcupine', 'eagle', 'tarantula', 'seagull', 'dolphin', 'whale', 'woodpecker', 'chicken', 'horse', 'pelican']
+word = random.choice(wordBank)
 chosenWord = list(word)
 progress = []
 hangmanArtCounter = 0
