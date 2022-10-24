@@ -19,14 +19,11 @@ def printLayout(hangmanArtCounter, progress, entries):
 wordBank = ['elephant', 'tiger', 'flamingo', 'panda', 'porcupine', 'eagle', 'tarantula', 'seagull', 'dolphin', 'whale', 'woodpecker', 'chicken', 'horse', 'pelican'] # word bank of possible words; can add or remove words to programmer's discretion
 word = random.choice(wordBank)
 chosenWord = list(word) # breaks up word into separate letters as each element EX: 'tiger' -> ['t', 'i', 'g', 'e', 'r']
-progress = [] # player's current progress; only holds correct letters from entries
+progress = ['_' for i in range(len(chosenWord))] # player's current progress; only holds correct letters from entries
 hangmanArtCounter = 0 # keeping track of what hangman art to use for UI
 userChar = '' # holds the user's character for comparison; used for checking valid inputs
 entries = [] # both wrong and right letters entered; in case of player entering the same letter again
 winStatus = False # holds current status of if the player guessed the word correctly within certain tries
-
-for _ in range(len(chosenWord)):
-    progress.append('_')
 
 while hangmanArtCounter < len(hangmanArt)-1:  # user keeps attempting while they haven't reached certain number of tries
     printLayout(hangmanArtCounter, progress, entries) # helper function called
