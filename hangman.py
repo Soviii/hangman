@@ -28,7 +28,7 @@ winStatus = False # holds current status of if the player guessed the word corre
 for _ in range(len(chosenWord)):
     progress.append('_')
 
-while hangmanArtCounter < len(hangmanArt)-1: 
+while hangmanArtCounter < len(hangmanArt)-1:  # user keeps attempting while they haven't reached certain number of tries
     printLayout(hangmanArtCounter, progress, entries) # helper function called
     userChar = input('Enter a letter \t') # prompts user to enter a letter/character
     if len(userChar) != 1: # if user did not enter a character or entered more than 1 character
